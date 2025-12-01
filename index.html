@@ -7,69 +7,76 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <div class="welcome-page-show welcome-page-hidden"></div>
-    <header>
-      <img
-        id="rps-logo"
-        src="./assets/images/rps_full_clean.png"
-        alt="Rock Paper Scissors logo"
-      />
-      <h1>
-        Welcome to my <span>Rock</span> <span>Paper</span>
-        <span>Scissors</span> game
-      </h1>
-    </header>
+    <div class="welcome-page-show welcome-page-hidden">
+      <header>
+        <img
+          id="rps-logo"
+          src="./assets/images/rps_full_clean.png"
+          alt="Rock Paper Scissors logo"
+        />
+        <h1>
+          Welcome to my <span>Rock</span> <span>Paper</span>
+          <span>Scissors</span> game
+        </h1>
+      </header>
 
-    <section>
-      <main></main>
-    </section>
+      <section>
+        <main>
+          <button type="button" class="button-play">Play the game</button>
+        </main>
+      </section>
 
-    <footer>
-      <div class="footer-content">
-        <div class="rules">
-          <h3>What are the rules</h3>
-          <p class="rules-subtitle">The rules are very simple:</p>
-          <ul>
-            <li>
-              <img src="./assets/images/rock_clean.png" alt="A rock symbol" />
-              <p>
-                <strong>Rock</strong> wins against Scissors but loses against
-                Paper
-              </p>
-            </li>
-            <li>
-              <img
-                src="./assets/images/scissors_clean.png"
-                alt="A scissor symbol"
-              />
-              <p>
-                <strong>Scissors</strong> wins against Paper but loses against
-                Rock
-              </p>
-            </li>
-            <li>
-              <img src="./assets/images/paper_clean.png" alt="A paper symbol" />
-              <strong>Paper</strong> wins against Rock but loses against
-              Scissors
-            </li>
-          </ul>
+      <footer>
+        <div class="footer-content">
+          <div class="rules">
+            <h3>What are the rules</h3>
+            <p class="rules-subtitle">The rules are very simple:</p>
+            <ul>
+              <li>
+                <img src="./assets/images/rock_clean.png" alt="A rock symbol" />
+                <p>
+                  <strong>Rock</strong> wins against Scissors but loses against
+                  Paper
+                </p>
+              </li>
+              <li>
+                <img
+                  src="./assets/images/scissors_clean.png"
+                  alt="A scissor symbol"
+                />
+                <p>
+                  <strong>Scissors</strong> wins against Paper but loses against
+                  Rock
+                </p>
+              </li>
+              <li>
+                <img
+                  src="./assets/images/paper_clean.png"
+                  alt="A paper symbol"
+                />
+                <strong>Paper</strong> wins against Rock but loses against
+                Scissors
+              </li>
+            </ul>
+          </div>
+          <div class="good-advice">
+            <h3>Good advice</h3>
+            <p>Want to win against the computer ? Try this strategy :</p>
+            <ul>
+              <li>If you played <strong>Rock,</strong> choose Scissors next</li>
+              <li>
+                If you played <strong>Scissors,</strong> choose Paper next
+              </li>
+              <li>If you played <strong>Paper,</strong> choose Rock next</li>
+            </ul>
+          </div>
         </div>
-        <div class="good-advice">
-          <h3>Good advice</h3>
-          <p>Want to win against the computer ? Try this strategy :</p>
-          <ul>
-            <li>If you played <strong>Rock,</strong> choose Scissors next</li>
-            <li>If you played <strong>Scissors,</strong> choose Paper next</li>
-            <li>If you played <strong>Paper,</strong> choose Rock next</li>
-          </ul>
+
+        <div class="copyright">
+          <p>2025 David Bouhaben</p>
         </div>
-      </div>
-
-      <div class="copyright">
-        <p>2025 David Bouhaben</p>
-      </div>
-    </footer>
-
+      </footer>
+    </div>
     <script src="js/index.js"></script>
   </body>
 </html>

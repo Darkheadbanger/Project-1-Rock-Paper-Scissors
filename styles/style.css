@@ -11,6 +11,13 @@ body {
   color: #f5f5f5;
 }
 
+.welcome-page-show {
+  display: block;
+}
+.welcome-page-hidden {
+  display: hidden;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -30,11 +37,41 @@ header h1 {
   margin-top: -40px;
 }
 
+/* Section */
+section {
+  margin: 50px;
+}
+
+main {
+  text-align: center;
+}
+main button {
+  width: 20vw;
+  height: 10vh;
+  border: 2px solid #26006e;
+  background-color: #00e5ff;
+  border-radius: 20px;
+  box-shadow: 12px 12px 3px 5px #00e5ff63;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+main button:hover {
+  background-color: #00d4e6;
+  transform: translateY(-2px);
+  box-shadow: 14px 14px 4px 6px #00e5ff63;
+}
+
+main button:active {
+  transform: translateY(4px);
+  box-shadow: 6px 6px 2px 3px #00e5ff63;
+}
+
 /* Footer */
 .footer-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: pointer;
 }
 
 .rules {
@@ -76,13 +113,18 @@ header h1 {
   width: 30px;
   height: auto;
 }
-
-.good-advice h3 p{
-    margin: 20px 0;
+.good-advice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.good-advice h3 p {
+  margin: 20px 0;
 }
 
-.copyright{
-    margin: 50px;
-    display: flex;
-    justify-content: center;
+.copyright {
+  margin: 50px;
+  display: flex;
+  justify-content: center;
 }
