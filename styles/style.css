@@ -67,6 +67,11 @@ main button:active {
   box-shadow: 6px 6px 2px 3px #00e5ff63;
 }
 
+.button-play{
+  text-transform: uppercase;
+  font-size: bold;
+}
+
 /* Footer */
 .footer-content {
   display: flex;
