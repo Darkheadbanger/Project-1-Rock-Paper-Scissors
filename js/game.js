@@ -14,17 +14,34 @@ export class Game {
   }
 
   startGame() {
-    this.welcomePage.classList.add("welcome-page-hidden");
-    this.loadingPage.classList.add("loading-page-show");
+    this.hiddenWelcomePage();
+    this.showLoadingPage();
     this.loadingTime();
+  }
+  showLoadingPage() {
+    this.loadingPage.classList.add("loading-page-show");
+  }
+
+  hiddenWelcomePage() {
+    this.welcomePage.classList.add("welcome-page-hidden");
   }
 
   loadingTime() {
     let countSecond = 3;
     this.waittingTime.textContent = countSecond;
-    setInterval(() => {
+    let setIntervalId = setInterval(() => {
       countSecond--;
       this.waittingTime.textContent = countSecond;
-    }, 3000);
+
+      if (countSecond <= 0) {
+        clearInterval(setIntervalId);
+        this.showGamePage();
+      }
+    }, 1000);
+  }
+
+  showGamePage() {
+    // this.welcomePage.classList.remove("welcome-page-hidden");
+    this.welcomePage.classList.add("game-page-show");
   }
 }

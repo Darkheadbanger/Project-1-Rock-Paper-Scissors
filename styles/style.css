@@ -67,7 +67,7 @@ main button:active {
   box-shadow: 6px 6px 2px 3px #00e5ff63;
 }
 
-.button-play{
+.button-play {
   text-transform: uppercase;
   font-size: bold;
 }
@@ -162,4 +162,19 @@ main button:active {
   to {
     clip-path: inset(0 -34% 0 0);
   }
+}
+
+.loading-page-hidden {
+  display: none;
+}
+.loading-page-hidden {
+  display: block;
+}
+
+/* Game page */
+.game-page-show {
+  display: block;
+}
+.game-page-hidden {
+  display: none;
 }
