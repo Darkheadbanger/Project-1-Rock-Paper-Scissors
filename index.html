@@ -1,90 +1,87 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="styles/style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="welcome-page" class="welcome-page-show">
-      <header>
-        <img
-          id="rps-logo"
-          src="./assets/images/rps_full_clean.png"
-          alt="Rock Paper Scissors logo"
-        />
-        <h1>
+        <header>
+            <img id="rps-logo" src="./assets/images/rps_full_clean.png" alt="Rock Paper Scissors logo" />
+            <h1>
           Welcome to my <span>Rock</span> <span>Paper</span>
           <span>Scissors</span> game
         </h1>
-      </header>
+        </header>
 
-      <section>
-        <main>
-          <button type="button" id="start-game-btn" class="button-play">
-            Play the game
-          </button>
-        </main>
-      </section>
+        <section>
+            <main>
+                <button type="button" id="start-game-btn" class="button-play">
+                    Play the game
+                </button>
+            </main>
+        </section>
 
-      <footer>
-        <div class="footer-content">
-          <div class="rules">
-            <h3>What are the rules</h3>
-            <p class="rules-subtitle">The rules are very simple:</p>
-            <ul>
-              <li>
-                <img src="./assets/images/rock_clean.png" alt="A rock symbol" />
-                <p>
-                  <strong>Rock</strong> wins against Scissors but loses against
-                  Paper
-                </p>
-              </li>
-              <li>
-                <img
-                  src="./assets/images/scissors_clean.png"
-                  alt="A scissor symbol"
-                />
-                <p>
-                  <strong>Scissors</strong> wins against Paper but loses against
-                  Rock
-                </p>
-              </li>
-              <li>
-                <img
-                  src="./assets/images/paper_clean.png"
-                  alt="A paper symbol"
-                />
-                <strong>Paper</strong> wins against Rock but loses against
-                Scissors
-              </li>
-            </ul>
-          </div>
-          <div class="good-advice">
-            <h3>Good advice</h3>
-            <p>Want to win against the computer ? Try this strategy :</p>
-            <ul>
-              <li>If you played <strong>Rock,</strong> choose Scissors next</li>
-              <li>
-                If you played <strong>Scissors,</strong> choose Paper next
-              </li>
-              <li>If you played <strong>Paper,</strong> choose Rock next</li>
-            </ul>
-          </div>
-        </div>
+        <footer>
+            <div class="footer-content">
+                <div class="rules">
+                    <h3>What are the rules</h3>
+                    <p class="rules-subtitle">The rules are very simple:</p>
+                    <ul>
+                        <li>
+                            <img src="./assets/images/rock_clean.png" alt="A rock symbol" />
+                            <p>
+                                <strong>Rock</strong> wins against Scissors but loses against Paper
+                            </p>
+                        </li>
+                        <li>
+                            <img src="./assets/images/scissors_clean.png" alt="A scissor symbol" />
+                            <p>
+                                <strong>Scissors</strong> wins against Paper but loses against Rock
+                            </p>
+                        </li>
+                        <li>
+                            <img src="./assets/images/paper_clean.png" alt="A paper symbol" />
+                            <strong>Paper</strong> wins against Rock but loses against Scissors
+                        </li>
+                    </ul>
+                </div>
+                <div class="good-advice">
+                    <h3>Good advice</h3>
+                    <p>Want to win against the computer ? Try this strategy :</p>
+                    <ul>
+                        <li>If you played <strong>Rock,</strong> choose Scissors next</li>
+                        <li>
+                            If you played <strong>Scissors,</strong> choose Paper next
+                        </li>
+                        <li>If you played <strong>Paper,</strong> choose Rock next</li>
+                    </ul>
+                </div>
+            </div>
 
-        <div class="copyright">
-          <p>2025 David Bouhaben</p>
-        </div>
-      </footer>
+            <div class="copyright">
+                <p>2025 David Bouhaben</p>
+            </div>
+        </footer>
     </div>
     <div id="loading-page" class="loading-page-show ">
-      <div>
-        <div class="waitting-info"><p> Waiting for an opponent connection </p><p class="loader"></p></div> 
-        <p> Usually it takes around <span id="waitting-time"></span> secs </span></p>
-      </section>
-    </div>
-    <script type="module" src="js/index.js"></script>
-  </body>
+        <div>
+            <div class="waitting-info">
+                <p> Waiting for an opponent connection </p>
+                <p class="loader"></p>
+            </div>
+            <p> Usually it takes around <span id="waitting-time"></span> secs </span>
+            </p>
+            </section>
+        </div>
+
+        <div id="game-page" class="game-page-show ">
+        </div>
+        <script type="module" src="js/index.js"></script>
+</body>
+
 </html>

@@ -16,5 +16,15 @@ export class Game {
   startGame() {
     this.welcomePage.classList.add("welcome-page-hidden");
     this.loadingPage.classList.add("loading-page-show");
+    this.loadingTime();
+  }
+
+  loadingTime() {
+    let countSecond = 3;
+    this.waittingTime.textContent = countSecond;
+    setInterval(() => {
+      countSecond--;
+      this.waittingTime.textContent = countSecond;
+    }, 3000);
   }
 }
