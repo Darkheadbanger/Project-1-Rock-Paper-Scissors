@@ -1,4 +1,4 @@
-export class Game {
+export class App {
   constructor() {
     // DOM
     this.welcomePage = document.getElementById("welcome-page");

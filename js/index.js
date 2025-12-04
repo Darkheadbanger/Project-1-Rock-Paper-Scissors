@@ -1,3 +1,3 @@
-import { Game } from "./game.js";
+import { App } from "./app.js";
 
-const game = new Game();
+const game = new App();
