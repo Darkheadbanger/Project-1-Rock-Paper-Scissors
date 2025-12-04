@@ -5,6 +5,7 @@ export class Game {
     this.playButton = document.getElementById("start-game-btn");
     this.loadingPage = document.getElementById("loading-page");
     this.waittingTime = document.getElementById("waitting-time");
+    this.gamePage = document.getElementById("game-page");
 
     this.init();
   }
@@ -15,18 +16,39 @@ export class Game {
 
   startGame() {
     this.hiddenWelcomePage();
-    this.showLoadingPage();
     this.loadingTime();
   }
   showLoadingPage() {
     this.loadingPage.classList.add("loading-page-show");
   }
 
+  hiddenLoadingPage() {
+    this.loadingPage.classList.add("welcome-page-hidden");
+  }
+
   hiddenWelcomePage() {
     this.welcomePage.classList.add("welcome-page-hidden");
   }
 
+  removeLoadingPage() {
+    this.loadingPage.classList.remove("loading-page-show");
+  }
+
+  showGamePage() {
+    this.gamePage.classList.add("game-page-show");
+  }
+
+  removeGamePage() {
+    this.gamePage.classList.remove("game-page-hidden");
+  }
+
+  hiddenGamePage() {
+    this.gamePage.classList.remove("game-page-hidden");
+  }
+
   loadingTime() {
+    this.showLoadingPage();
+
     let countSecond = 3;
     this.waittingTime.textContent = countSecond;
     let setIntervalId = setInterval(() => {
@@ -35,13 +57,14 @@ export class Game {
 
       if (countSecond <= 0) {
         clearInterval(setIntervalId);
-        this.showGamePage();
+        this.transitionToGamePage();
       }
     }, 1000);
   }
 
-  showGamePage() {
-    // this.welcomePage.classList.remove("welcome-page-hidden");
-    this.welcomePage.classList.add("game-page-show");
+  transitionToGamePage() {
+    this.removeLoadingPage();
+    this.hiddenGamePage();
+    this.showGamePage();
   }
 }

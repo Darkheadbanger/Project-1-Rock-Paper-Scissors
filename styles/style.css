@@ -136,7 +136,7 @@ main button:active {
 
 /* Loading page */
 #loading-page {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -167,14 +167,184 @@ main button:active {
 .loading-page-hidden {
   display: none;
 }
-.loading-page-hidden {
-  display: block;
+
+.loading-page-show {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 /* Game page */
-.game-page-show {
-  display: block;
+
+#game-page {
+  display: none;
+  height: 100vh;
+  padding: 20px;
 }
+
+.game-page-show {
+  display: block !important;
+}
+
 .game-page-hidden {
   display: none;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 30px;
+}
+
+.game-header {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.game-header #winner {
+  color: #00e5ff;
+}
+
+.game-sides {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 50px;
+  flex: 1;
+}
+
+.player-side,
+.computer-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  max-width: 400px;
+}
+
+.player-side h2,
+.computer-side h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.player-side p,
+.computer-side p {
+  font-size: 1.2rem;
+}
+
+.player-score,
+.computer-score {
+  color: #00e5ff;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.choices {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.choice-img {
+  width: 80px;
+  height: auto;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.choice-img:hover {
+  transform: scale(1.1);
+  border-color: #00e5ff;
+  box-shadow: 0 0 20px #00e5ff63;
+}
+
+.choice-img:active {
+  transform: scale(0.95);
+}
+
+.choice-game {
+  margin-top: 20px;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-page-show {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-page-hidden {
+  display: none;
+}
+
+.game-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+  gap: 100px;
+}
+
+.player-side,
+.computer-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.player-side h2,
+.computer-side h2 {
+  font-size: 2rem;
+  color: #00e5ff;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.choice-img {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  filter: brightness(0.8);
+  border-radius: 15px;
+}
+
+.player-side .choice-img:hover {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+.player-side .choice-img:active {
+  transform: scale(1.05);
+}
+
+.computer-side .choice-img {
+  cursor: default;
+  opacity: 0.6;
 }
