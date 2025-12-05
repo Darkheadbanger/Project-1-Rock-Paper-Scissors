@@ -81,7 +81,9 @@
         </div>
       </footer>
     </div>
-    <div id="loading-page" class="loading-page-hidden">
+
+    <!-- Loading page -->
+    <section id="loading-page" class="loading-page-hidden">
       <div>
         <div class="waitting-info">
           <p>Waiting for an opponent connection</p>
@@ -89,12 +91,12 @@
         </div>
         <p>Usually it takes around <span id="waitting-time"></span> secs</p>
       </div>
-    </div>
+    </section>
 
     <!-- Gaming page -->
     <div id="game-page" class="game-page-hidden">
       <div class="game-container">
-        <div class="game-header">
+        <header class="game-header">
           <div class="replay">
             <button type="button" id="restart-game-btn" class="button-replay">
               Replay the game
@@ -102,9 +104,9 @@
           </div>
 
           <p>The winner is : <span id="winner"></span></p>
-        </div>
+        </header>
 
-        <div class="game-sides">
+        <section class="game-sides">
           <div class="player-side">
             <h2>You</h2>
             <div class="choices">
@@ -160,7 +162,12 @@
               <!-- The choice scissors, rock or papper -->
             </div>
           </div>
-        </div>
+        </section>
+        <footer>
+          <div class="copyright">
+            <p>2025 David Bouhaben</p>
+          </div>
+        </footer>
       </div>
     </div>
 

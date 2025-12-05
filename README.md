@@ -39,7 +39,7 @@ This is my first JavaScript project created as part of the **IronHack Web Develo
 - ✅ Computer random selection
 - ✅ Round result display (Win/Lose/Draw) - Shows winner in same page
 - ✅ Winner determination logic with 1-second delay
-- 🚧 Play again button (in progress)
+- ✅ Play again button
 
 ### Simplified Approach
 Instead of separate end game screen and score tracking to 3 wins, the game shows the winner immediately after each round on the same page. This streamlined approach keeps the game simple and focused.
