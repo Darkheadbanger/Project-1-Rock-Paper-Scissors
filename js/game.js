@@ -21,7 +21,8 @@ export class Game {
     this.choicePlayerGame = document.getElementById("choice-player-game");
     this.choiceComputerGame = document.getElementById("choice-computer-game");
 
-    // Players choices:
+    // Winners and losers:
+    this.winnerLoser = document.getElementById("winner");
     this.playerChoiceElement = null;
     this.computerChoiceElement = null;
 
@@ -32,7 +33,6 @@ export class Game {
     // Add event listeners to player choices
     this.playerChoice();
     this.computerChoice();
-    this.winner();
   }
 
   playerChoice() {
@@ -40,6 +40,7 @@ export class Game {
       this.getPlayerChoice("rock");
       setTimeout(() => {
         this.getComputerChoice();
+        this.winner();
       }, 1000);
     });
 
@@ -47,12 +48,14 @@ export class Game {
       this.getPlayerChoice("paper");
       setTimeout(() => {
         this.getComputerChoice();
+        this.winner();
       }, 1000);
     });
     this.playerScissors.addEventListener("click", () => {
       this.getPlayerChoice("scissors");
       setTimeout(() => {
         this.getComputerChoice();
+        this.winner();
       }, 1000);
     });
   }
@@ -71,7 +74,7 @@ export class Game {
 
   getComputerChoice() {
     this.computerChoiceElement = this.computerChoice();
-    this.choiceComputerGame.innerHTML = `<p>The computer choice is : ${this.computerChoice()}</p>`;
+    this.choiceComputerGame.innerHTML = `<p>The computer choice is : ${this.computerChoiceElement}</p>`;
   }
 
   winner() {
@@ -79,15 +82,17 @@ export class Game {
     const computerChoiceElement = this.computerChoiceElement;
 
     if (playerChoiceElement === computerChoiceElement) {
-      return "Draw";
+      return (this.winnerLoser.textContent = "Draw");
     } else if (
-      (playerChoiceElement === "rock" && computerChoiceElement === "scissors") ||
-      (playerChoiceElement === "scissors" && computerChoiceElement === "paper") ||
+      (playerChoiceElement === "rock" &&
+        computerChoiceElement === "scissors") ||
+      (playerChoiceElement === "scissors" &&
+        computerChoiceElement === "paper") ||
       (playerChoiceElement === "paper" && computerChoiceElement === "rock")
     ) {
-      return "Player wins";
+      return (this.winnerLoser.textContent = "Player wins");
     } else {
-      return "Computer wins";
+      return (this.winnerLoser.textContent = "Computer wins");
     }
   }
 }
