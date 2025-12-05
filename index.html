@@ -97,70 +97,71 @@
     <div id="game-page" class="game-page-hidden">
       <div class="game-container">
         <header class="game-header">
-          <div class="replay">
-            <button type="button" id="restart-game-btn" class="button-replay">
-              Replay the game
-            </button>
-          </div>
-
           <p>The winner is : <span id="winner"></span></p>
         </header>
 
-        <section class="game-sides">
-          <div class="player-side">
-            <h2>You</h2>
-            <div class="choices">
-              <img
-                id="player-rock"
-                src="./assets/images/rock_clean.png"
-                alt="Rock"
-                class="choice-img"
-              />
-              <img
-                id="player-paper"
-                src="./assets/images/paper_clean.png"
-                alt="Paper"
-                class="choice-img"
-              />
-              <img
-                id="player-scissors"
-                src="./assets/images/scissors_clean.png"
-                alt="Scissors"
-                class="choice-img"
-              />
+        <section class="game-container">
+          <div class="game-sides">
+            <div class="player-side">
+              <h2>You</h2>
+              <div class="choices">
+                <img
+                  id="player-rock"
+                  src="./assets/images/rock_clean.png"
+                  alt="Rock"
+                  class="choice-img"
+                />
+                <img
+                  id="player-paper"
+                  src="./assets/images/paper_clean.png"
+                  alt="Paper"
+                  class="choice-img"
+                />
+                <img
+                  id="player-scissors"
+                  src="./assets/images/scissors_clean.png"
+                  alt="Scissors"
+                  class="choice-img"
+                />
+              </div>
+
+              <!-- Generer JS -->
+              <div id="choice-player-game" class="choice-game">
+                <!-- The choice scissors, rock or papper -->
+              </div>
             </div>
 
-            <!-- Generer JS -->
-            <div id="choice-player-game" class="choice-game">
-              <!-- The choice scissors, rock or papper -->
+            <div class="computer-side">
+              <h2>Computer</h2>
+              <div class="choices">
+                <img
+                  id="computer-rock"
+                  src="./assets/images/rock_clean.png"
+                  alt="Rock"
+                  class="choice-img"
+                />
+                <img
+                  id="computer-paper"
+                  src="./assets/images/paper_clean.png"
+                  alt="Paper"
+                  class="choice-img"
+                />
+                <img
+                  id="computer-scissors"
+                  src="./assets/images/scissors_clean.png"
+                  alt="Scissors"
+                  class="choice-img"
+                />
+              </div>
+              <div id="choice-computer-game" class="choice-game">
+                <!-- The choice scissors, rock or papper -->
+              </div>
             </div>
           </div>
-
-          <div class="computer-side">
-            <h2>Computer</h2>
-            <div class="choices">
-              <img
-                id="computer-rock"
-                src="./assets/images/rock_clean.png"
-                alt="Rock"
-                class="choice-img"
-              />
-              <img
-                id="computer-paper"
-                src="./assets/images/paper_clean.png"
-                alt="Paper"
-                class="choice-img"
-              />
-              <img
-                id="computer-scissors"
-                src="./assets/images/scissors_clean.png"
-                alt="Scissors"
-                class="choice-img"
-              />
-            </div>
-            <div id="choice-computer-game" class="choice-game">
-              <!-- The choice scissors, rock or papper -->
-            </div>
+          <div class="replay">
+            <button type="button" id="restart-game-btn" class="button-replay">
+              Replay
+            </button>
           </div>
         </section>
         <footer>
