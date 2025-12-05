@@ -42,7 +42,7 @@ export class Game {
         this.getComputerChoice();
       }, 1000);
       setTimeout(() => {
-        this.winner();
+        this.winner(); 
       }, 1200);
     });
 
