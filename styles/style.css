@@ -350,3 +350,29 @@ main button:active {
   cursor: default;
   opacity: 0.6;
 }
+
+/* Button replay */
+.button-replay {
+  width: 10vw;
+  height: 5vh;
+  border: 2px solid #26006e;
+  background-color: #00e5ff;
+  border-radius: 10px;
+  box-shadow: 6px 6px 1.5px 2.5px #00e5ff63;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.button-replay:hover {
+  background-color: #00d4e6;
+  transform: translateY(-2px);
+  box-shadow: 7px 7px 2px 3px #00e5ff63;
+}
+
+.button-replay:active {
+  transform: translateY(4px);
+  box-shadow: 3px 3px 1px 1.5px #00e5ff63;
+}

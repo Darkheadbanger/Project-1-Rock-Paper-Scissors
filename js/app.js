@@ -3,6 +3,7 @@ export class App {
     // DOM
     this.welcomePage = document.getElementById("welcome-page");
     this.playButton = document.getElementById("start-game-btn");
+    this.replayButton = document.getElementById("restart-game-btn");
     this.loadingPage = document.getElementById("loading-page");
     this.waittingTime = document.getElementById("waitting-time");
     this.gamePage = document.getElementById("game-page");
@@ -12,12 +13,18 @@ export class App {
 
   init() {
     this.playButton.addEventListener("click", (e) => this.startGame());
+    this.replayButton.addEventListener("click", (e) => this.restartGame());
   }
 
   startGame() {
     this.hiddenWelcomePage();
     this.loadingTime();
   }
+
+  restartGame() {
+    location.reload();
+  }
+
   showLoadingPage() {
     this.loadingPage.classList.add("loading-page-show");
   }
