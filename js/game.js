@@ -40,23 +40,29 @@ export class Game {
       this.getPlayerChoice("rock");
       setTimeout(() => {
         this.getComputerChoice();
-        this.winner();
       }, 1000);
+      setTimeout(() => {
+        this.winner();
+      }, 1200);
     });
 
     this.playerPaper.addEventListener("click", () => {
       this.getPlayerChoice("paper");
       setTimeout(() => {
         this.getComputerChoice();
-        this.winner();
       }, 1000);
+      setTimeout(() => {
+        this.winner();
+      }, 1200);
     });
     this.playerScissors.addEventListener("click", () => {
       this.getPlayerChoice("scissors");
       setTimeout(() => {
         this.getComputerChoice();
-        this.winner();
       }, 1000);
+      setTimeout(() => {
+        this.winner();
+      }, 1200);
     });
   }
 

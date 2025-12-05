@@ -196,7 +196,6 @@ main button:active {
   display: flex;
   flex-direction: column;
   height: 100%;
-  gap: 30px;
 }
 
 .game-header {
@@ -215,7 +214,6 @@ main button:active {
   justify-content: space-around;
   align-items: flex-start;
   gap: 50px;
-  flex: 1;
 }
 
 .player-side,
@@ -223,7 +221,6 @@ main button:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
   flex: 1;
   max-width: 400px;
 }
@@ -276,7 +273,8 @@ main button:active {
 
 .choice-game {
   margin-top: 20px;
-  min-height: 100px;
+  min-height: 20px;
+  width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -298,7 +296,7 @@ main button:active {
   align-items: center;
   width: 80%;
   max-width: 1200px;
-  gap: 100px;
+  gap: 20px;
 }
 
 .player-side,
@@ -319,15 +317,19 @@ main button:active {
 }
 
 .choices {
+  width: 120px;
+  max-height: auto;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
   align-items: center;
 }
 
 .choice-img {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: auto;
+  max-height: 18vh;
+  object-fit: contain;
   cursor: pointer;
   transition: all 0.3s ease;
   filter: brightness(0.8);
