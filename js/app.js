@@ -1,14 +1,14 @@
 /**
  * App class manages the application flow and page transitions.
  * Handles welcome page, loading screen, and game page navigation.
- * 
+ *
  * @class App
  */
 export class App {
   /**
    * Creates an instance of App.
    * Initializes DOM elements and sets up event listeners.
-   * 
+   *
    * @constructor
    */
   constructor() {
@@ -19,13 +19,16 @@ export class App {
     this.loadingPage = document.getElementById("loading-page");
     this.waittingTime = document.getElementById("waitting-time");
     this.gamePage = document.getElementById("game-page");
+    // Sound
+    this.playTheGameSound = new Audio("./assets/sound/game-start.mp3");
+    this.replayTheGameSound = new Audio("./assets/sound/rewind.mp3");
 
     this.init();
   }
 
   /**
    * Initializes event listeners for play and replay buttons.
-   * 
+   *
    * @method init
    */
   init() {
@@ -35,26 +38,30 @@ export class App {
 
   /**
    * Starts the game by hiding welcome page and showing loading screen.
-   * 
+   *
    * @method startGame
    */
   startGame() {
+    this.playTheGameSound.play();
     this.hiddenWelcomePage();
     this.loadingTime();
   }
 
   /**
    * Restarts the game by reloading the page.
-   * 
+   *
    * @method restartGame
    */
   restartGame() {
-    location.reload();
+    this.replayTheGameSound.play();
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
   }
 
   /**
    * Shows the loading page by adding CSS class.
-   * 
+   *
    * @method showLoadingPage
    */
   showLoadingPage() {
@@ -63,7 +70,7 @@ export class App {
 
   /**
    * Hides the loading page by adding CSS class.
-   * 
+   *
    * @method hiddenLoadingPage
    */
   hiddenLoadingPage() {
@@ -72,7 +79,7 @@ export class App {
 
   /**
    * Hides the welcome page by adding CSS class.
-   * 
+   *
    * @method hiddenWelcomePage
    */
   hiddenWelcomePage() {
@@ -81,7 +88,7 @@ export class App {
 
   /**
    * Removes the loading page by removing CSS class.
-   * 
+   *
    * @method removeLoadingPage
    */
   removeLoadingPage() {
@@ -90,7 +97,7 @@ export class App {
 
   /**
    * Shows the game page by adding CSS class.
-   * 
+   *
    * @method showGamePage
    */
   showGamePage() {
@@ -99,7 +106,7 @@ export class App {
 
   /**
    * Removes game page hidden state by removing CSS class.
-   * 
+   *
    * @method removeGamePage
    */
   removeGamePage() {
@@ -108,7 +115,7 @@ export class App {
 
   /**
    * Hides the game page by removing CSS class.
-   * 
+   *
    * @method hiddenGamePage
    */
   hiddenGamePage() {
@@ -118,7 +125,7 @@ export class App {
   /**
    * Displays loading countdown timer (3 seconds) before game starts.
    * Updates the UI every second and transitions to game page when complete.
-   * 
+   *
    * @method loadingTime
    */
   loadingTime() {
@@ -140,7 +147,7 @@ export class App {
   /**
    * Transitions from loading page to game page.
    * Removes loading screen and displays the game interface.
-   * 
+   *
    * @method transitionToGamePage
    */
   transitionToGamePage() {

@@ -1,14 +1,14 @@
 /**
  * Game class manages the core Rock Paper Scissors game logic.
  * Handles player input, computer choices, and winner determination.
- * 
+ *
  * @class Game
  */
 export class Game {
   /**
    * Creates an instance of Game.
    * Initializes DOM elements and game state variables.
-   * 
+   *
    * @constructor
    */
   constructor() {
@@ -35,17 +35,23 @@ export class Game {
 
     // Winner display element
     this.winnerLoser = document.getElementById("winner");
-    
+
     // Game state variables
     this.playerChoiceElement = null;
     this.computerChoiceElement = null;
+
+    // Sound
+    this.rockSound = new Audio("./assets/sound/rock.mp3");
+    this.paperSound = new Audio("./assets/sound/paper.mp3");
+    this.scissorsSound = new Audio("./assets/sound/scissors.mp3");
+    this.playTheGameSound = new Audio("./assets/sound/game-start.mp3");
 
     this.init();
   }
 
   /**
    * Initializes the game by setting up event listeners.
-   * 
+   *
    * @method init
    */
   init() {
@@ -57,13 +63,15 @@ export class Game {
   /**
    * Sets up click event listeners for player choices (rock, paper, scissors).
    * Each click triggers a 1-second delay for computer choice and 1.2-second delay for winner determination.
-   * 
+   *
    * @method playerChoice
    */
   playerChoice() {
     this.playerRock.addEventListener("click", () => {
       this.getPlayerChoice("rock");
+      this.rockSound.play();
       setTimeout(() => {
+        this.rockSound.play();
         this.getComputerChoice();
       }, 1000);
       setTimeout(() => {
@@ -73,18 +81,24 @@ export class Game {
 
     this.playerPaper.addEventListener("click", () => {
       this.getPlayerChoice("paper");
+      this.paperSound.play();
+
       setTimeout(() => {
         this.getComputerChoice();
+        this.paperSound.play();
       }, 1000);
       setTimeout(() => {
         this.winner();
       }, 1200);
     });
-    
+
     this.playerScissors.addEventListener("click", () => {
       this.getPlayerChoice("scissors");
+      this.scissorsSound.play();
+
       setTimeout(() => {
         this.getComputerChoice();
+        this.scissorsSound.play();
       }, 1000);
       setTimeout(() => {
         this.winner();
@@ -94,7 +108,7 @@ export class Game {
 
   /**
    * Records and displays the player's choice.
-   * 
+   *
    * @method getPlayerChoice
    * @param {string} element - The player's choice ("rock", "paper", or "scissors")
    */
@@ -105,7 +119,7 @@ export class Game {
 
   /**
    * Generates a random computer choice.
-   * 
+   *
    * @method computerChoice
    * @returns {string} The computer's random choice ("rock", "paper", or "scissors")
    */
@@ -119,7 +133,7 @@ export class Game {
   /**
    * Gets and displays the computer's choice.
    * Calls computerChoice() to generate random selection.
-   * 
+   *
    * @method getComputerChoice
    */
   getComputerChoice() {
@@ -133,7 +147,7 @@ export class Game {
    * - Rock beats Scissors
    * - Scissors beats Paper
    * - Paper beats Rock
-   * 
+   *
    * @method winner
    * @returns {string} The winner text ("Draw", "Player wins", or "Computer wins")
    */

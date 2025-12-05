@@ -129,7 +129,7 @@ main button:active {
 }
 
 .copyright {
-  margin: 50px;
+  margin: 20px;
   display: flex;
   justify-content: center;
 }
@@ -208,12 +208,19 @@ main button:active {
   color: #00e5ff;
 }
 
+.game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
 .game-sides {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
-  gap: 50px;
+  /* gap: 50px; */
 }
 
 .player-side,
@@ -296,7 +303,6 @@ main button:active {
   align-items: center;
   width: 80%;
   max-width: 1200px;
-  gap: 20px;
 }
 
 .player-side,
@@ -352,6 +358,9 @@ main button:active {
 }
 
 /* Button replay */
+.replay{
+  margin-top: 20px;
+}
 .button-replay {
   width: 10vw;
   height: 5vh;
