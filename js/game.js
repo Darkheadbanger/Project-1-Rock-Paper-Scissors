@@ -21,6 +21,10 @@ export class Game {
     this.choicePlayerGame = document.getElementById("choice-player-game");
     this.choiceComputerGame = document.getElementById("choice-computer-game");
 
+    // Players choices:
+    this.playerChoiceElement = null;
+    this.computerChoiceElement = null;
+
     this.init();
   }
 
@@ -39,30 +43,51 @@ export class Game {
       }, 1000);
     });
 
-    this.playerPaper.addEventListener("click", () =>
-      this.getPlayerChoice("paper")
-    );
-    this.playerScissors.addEventListener("click", () =>
-      this.getPlayerChoice("scissors")
-    );
+    this.playerPaper.addEventListener("click", () => {
+      this.getPlayerChoice("paper");
+      setTimeout(() => {
+        this.getComputerChoice();
+      }, 1000);
+    });
+    this.playerScissors.addEventListener("click", () => {
+      this.getPlayerChoice("scissors");
+      setTimeout(() => {
+        this.getComputerChoice();
+      }, 1000);
+    });
   }
 
   getPlayerChoice(element) {
+    this.playerChoiceElement = element;
     this.choicePlayerGame.innerHTML = `<p>Your choice is : ${element}</p>`;
   }
 
   computerChoice() {
-    let choices = ["rock", "paper", "scissors"];
-    let randomChoose = Math.floor(Math.random() * choices.length);
+    const choices = ["rock", "paper", "scissors"];
+    const randomChoose = Math.floor(Math.random() * choices.length);
     console.log("computerChoice", choices[randomChoose]);
     return choices[randomChoose];
   }
 
   getComputerChoice() {
+    this.computerChoiceElement = this.computerChoice();
     this.choiceComputerGame.innerHTML = `<p>The computer choice is : ${this.computerChoice()}</p>`;
   }
 
   winner() {
-    
+    const playerChoiceElement = this.playerChoiceElement;
+    const computerChoiceElement = this.computerChoiceElement;
+
+    if (playerChoiceElement === computerChoiceElement) {
+      return "Draw";
+    } else if (
+      (playerChoiceElement === "rock" && computerChoiceElement === "scissors") ||
+      (playerChoiceElement === "scissors" && computerChoiceElement === "paper") ||
+      (playerChoiceElement === "paper" && computerChoiceElement === "rock")
+    ) {
+      return "Player wins";
+    } else {
+      return "Computer wins";
+    }
   }
 }
