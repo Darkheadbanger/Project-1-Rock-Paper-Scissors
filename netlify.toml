@@ -1,0 +1,15 @@
+# Netlify configuration for Rock Paper Scissors game
+[build]
+  # No build command needed - static site
+  command = ""
+  
+  # Publish from root directory where index.html is located
+  publish = "."
+
+# Optional: Set custom headers for better performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer-when-downgrade"
